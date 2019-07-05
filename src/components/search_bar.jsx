@@ -13,6 +13,7 @@ class SearchBar extends Component {
     console.log('rendered search bar');
     return (
       <input
+        placeholder="Search.."
         type="text"
         className="form-search form-control"
         onChange={this.handleUpdate}

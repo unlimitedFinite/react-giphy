@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import giphy from 'giphy-api';
+// import giphy from 'giphy-api';
 
 import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
+
+const giphy = require('giphy-api')({
+  https: true,
+  apiKey: 'zRCdOl2r1yFFmbMYJxMOdH2ZsrSeXDhF'
+});
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +28,7 @@ class App extends Component {
 
   search = (query) => {
     // call API
-    giphy('zRCdOl2r1yFFmbMYJxMOdH2ZsrSeXDhF').search({
+    giphy.search({
       q: query,
       rating: 'g',
       limit: 10
